@@ -1,4 +1,4 @@
-# substratum
+# Substratum
 
 [![License](https://img.shields.io/github/license/onebytegone/substratum.svg)](./LICENSE)
 [![Build Status](https://travis-ci.com/onebytegone/substratum.svg?branch=master)](https://travis-ci.com/onebytegone/substratum)
@@ -9,10 +9,23 @@
 
 ## What?
 
+A bare-bones theme for [Hugo](https://gohugo.io/). Currently under construction 🚧.
+
 ## Why?
+
+## Usage
+
+```
+cd to/your/hugo/site
+git submodule add https://github.com/onebytegone/substratum.git themes/substratum
+pushd themes/substratum
+npm install
+grunt build --env=prd
+popd
+hugo server -t substratum
+```
 
 ## License
 
-This software is released under the MIT license. See [the license
-file](LICENSE) for more details.
+This software is released under the MIT license. See [the license file](LICENSE) for more details.
 
