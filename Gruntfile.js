@@ -13,7 +13,7 @@ module.exports = (grunt) => {
    let config;
 
    config = {
-      entryFile: './src/index.ts',
+      entryFile: './src/ts/index.ts',
       js: {
          gruntFile: 'Gruntfile.js',
          webpackConfig: 'webpack.config.js',

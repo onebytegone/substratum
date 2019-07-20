@@ -46,7 +46,7 @@ module.exports = function(env) {
                test: /\.ts$/,
                loader: 'ts-loader',
                options: {
-                  configFile: env.tsconfig || path.resolve(__dirname, 'src', 'tsconfig.esm.json'),
+                  configFile: env.tsconfig || path.resolve(__dirname, 'src', 'ts', 'tsconfig.esm.json'),
                },
             },
          ],

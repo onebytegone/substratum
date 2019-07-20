@@ -1,7 +1,7 @@
 {
    "extends": "@silvermine/typescript-config/browser/tsconfig.json",
    "include": [
-      "src/**/*",
+      "src/ts/**/*",
       "test/**/*"
    ]
 }
