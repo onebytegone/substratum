@@ -1,0 +1,12 @@
+name = "Substratum"
+license = "MIT"
+licenselink = "https://github.com/onebytegone/substratum/blob/master/LICENSE"
+description = ""
+homepage = "https://github.com/onebytegone/substratum/"
+tags = []
+features = []
+min_version = "0.41"
+
+[author]
+  name = "Ethan Smith"
+  homepage = "https://onebytegone.com"
