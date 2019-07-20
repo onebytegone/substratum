@@ -1,5 +1,7 @@
 'use strict';
 
+const sass = require('node-sass');
+
 function getEnvironment(grunt) {
    const TYPES = [ 'prd', 'dev' ],
          env = grunt.option('env');
@@ -35,12 +37,17 @@ module.exports = (grunt) => {
             esm: 'src/tsconfig.esm.json',
          },
       },
+      scss: {
+         src: './src/scss/**/*.scss',
+         main: './src/scss/substratum.scss',
+      },
       commands: {
          tsc: './node_modules/.bin/tsc',
          webpack: './node_modules/.bin/webpack',
       },
       out: {
          js: './static/js',
+         css: './static/css/substratum.css',
          test: [ './.nyc_output', 'coverage' ],
       },
    };
@@ -59,6 +66,13 @@ module.exports = (grunt) => {
          },
       },
 
+      sasslint: {
+         options: {
+            configFile: 'node_modules/sass-lint-config-silvermine/sass-lint.yml',
+         },
+         target: config.scss.src,
+      },
+
       exec: {
          options: {
             failOnError: true,
@@ -74,6 +88,21 @@ module.exports = (grunt) => {
          },
       },
 
+      sass: {
+         options: {
+            sourceMap: ENVIRONMENT === 'dev',
+            sourceMapContents: ENVIRONMENT === 'dev',
+            indentWidth: 3,
+            outputStyle: (ENVIRONMENT === 'dev' ? 'expanded' : 'compressed'),
+            sourceComments: ENVIRONMENT === 'dev',
+            implementation: sass,
+         },
+
+         build: {
+            files: { [config.out.css]: config.scss.main },
+         },
+      },
+
       clean: {
          dist: [ config.out.js ],
          testOutput: config.out.test,
@@ -82,7 +111,11 @@ module.exports = (grunt) => {
       watch: {
          ts: {
             files: [ config.ts.src ],
-            tasks: [ 'build' ],
+            tasks: [ 'build-umd' ],
+         },
+         scss: {
+            files: [ config.ts.scss ],
+            tasks: [ 'sass:build' ],
          },
          webpackConfig: {
             files: [ config.js.webpackConfig ],
@@ -101,12 +134,14 @@ module.exports = (grunt) => {
    grunt.loadNpmTasks('grunt-exec');
    grunt.loadNpmTasks('grunt-contrib-clean');
    grunt.loadNpmTasks('grunt-contrib-watch');
+   grunt.loadNpmTasks('grunt-sass');
+   grunt.loadNpmTasks('grunt-sass-lint');
 
-   grunt.registerTask('standards', [ 'eslint:target', 'exec:standards' ]);
+   grunt.registerTask('standards', [ 'eslint:target', 'exec:standards', 'sasslint' ]);
    grunt.registerTask('standards-fix', [ 'eslint:fix' ]);
 
    grunt.registerTask('build-umd', [ 'exec:webpackUMD' ]);
-   grunt.registerTask('build', [ 'build-umd' ]);
+   grunt.registerTask('build', [ 'build-umd', 'sass:build' ]);
 
    grunt.registerTask('develop', [ 'clean:dist', 'build', 'watch' ]);
 

@@ -46,6 +46,7 @@ node_modules
 
 # Build output
 static/js
+static/css
 
 # NYC
 .nyc_output
