@@ -10,7 +10,7 @@ function getFileNameFromPackageName(packageName) {
 }
 
 module.exports = function(env) {
-   const DIST = path.resolve(__dirname, 'dist');
+   const DIST = path.resolve(__dirname, 'static', 'js');
 
    env = env || {};
 

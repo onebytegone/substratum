@@ -40,7 +40,7 @@ module.exports = (grunt) => {
          webpack: './node_modules/.bin/webpack',
       },
       out: {
-         dist: './dist',
+         js: './static/js',
          test: [ './.nyc_output', 'coverage' ],
       },
    };
@@ -75,7 +75,7 @@ module.exports = (grunt) => {
       },
 
       clean: {
-         dist: config.out.dist,
+         dist: [ config.out.js ],
          testOutput: config.out.test,
       },
 
