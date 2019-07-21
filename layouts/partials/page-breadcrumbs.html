@@ -8,10 +8,12 @@
       </li>
    {{ end }}
 {{ end }}
-{{ if and .Parent (not .Parent.IsHome) }}
-   <nav role="navigation">
-      <ul>
-         {{ template "breadcrumbs" (dict "host" . "crumb" .) }}
-      </ul>
-   </nav>
+{{ if .Parent }}
+   {{ if not .Parent.IsHome }}
+      <nav role="navigation">
+         <ul>
+            {{ template "breadcrumbs" (dict "host" . "crumb" .) }}
+         </ul>
+      </nav>
+   {{ end }}
 {{ end }}

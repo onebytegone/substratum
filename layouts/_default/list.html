@@ -1,20 +1,22 @@
 {{ define "main" }}
-   <article>
+   {{ if .Content }}
+      <article>
+         <h1>{{ .Title }}</h1>
+         {{- .Content -}}
+      </article>
+   {{ else }}
       <h1>{{ .Title }}</h1>
-      <section>
-         {{- .Content -}}
-      </section>
-      <section>
-         {{ range .Paginator.Pages }}
-            <div>
-               <h2>
-                  <a href="{{ .Permalink }}">{{ .Title }}</a>
-               </h2>
-               <p>{{ .Summary  }}</p>
-            </div>
-         {{ end }}
-         {{- .Content -}}
-      </section>
+   {{end }}
+   {{ range .Paginator.Pages }}
+      <div>
+         <h2>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+         </h2>
+         <p>{{ .Summary  }}</p>
+      </div>
+   {{ end }}
+   {{- .Content -}}
+   <nav>
       {{- template "_internal/pagination.html" . -}}
-   </article>
+   </nav>
 {{ end }}
