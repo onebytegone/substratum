@@ -47,7 +47,10 @@ module.exports = (grunt) => {
       },
       out: {
          js: './static/js',
-         css: './static/css/substratum.css',
+         css: {
+            base: './static/css/',
+            main: './static/css/substratum.css',
+         },
          test: [ './.nyc_output', 'coverage' ],
       },
    };
@@ -99,12 +102,25 @@ module.exports = (grunt) => {
          },
 
          build: {
-            files: { [config.out.css]: config.scss.main },
+            files: { [config.out.css.main]: config.scss.main },
+         },
+      },
+
+      copy: {
+         thirdparty: {
+            files: [
+               {
+                  expand: true,
+                  cwd: 'node_modules/tachyons/css',
+                  src: 'tachyons.min.css',
+                  dest: config.out.css.base,
+               },
+            ],
          },
       },
 
       clean: {
-         dist: [ config.out.js ],
+         dist: [ config.out.js, config.out.css.base ],
          testOutput: config.out.test,
       },
 
@@ -133,6 +149,7 @@ module.exports = (grunt) => {
    grunt.loadNpmTasks('grunt-eslint');
    grunt.loadNpmTasks('grunt-exec');
    grunt.loadNpmTasks('grunt-contrib-clean');
+   grunt.loadNpmTasks('grunt-contrib-copy');
    grunt.loadNpmTasks('grunt-contrib-watch');
    grunt.loadNpmTasks('grunt-sass');
    grunt.loadNpmTasks('grunt-sass-lint');
@@ -141,7 +158,7 @@ module.exports = (grunt) => {
    grunt.registerTask('standards-fix', [ 'eslint:fix' ]);
 
    grunt.registerTask('build-umd', [ 'exec:webpackUMD' ]);
-   grunt.registerTask('build', [ 'build-umd', 'sass:build' ]);
+   grunt.registerTask('build', [ 'build-umd', 'sass:build', 'copy:thirdparty' ]);
 
    grunt.registerTask('develop', [ 'clean:dist', 'build', 'watch' ]);
 
