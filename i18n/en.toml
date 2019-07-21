@@ -1,0 +1,8 @@
+[whatsNewHdg]
+other = "What's New"
+
+[readMoreLnk]
+other = "Read more"
+
+[seeAllFromSectionLnk]
+other = "See all: {{ .Title }}"

@@ -1,0 +1,17 @@
+{{ define "breadcrumbs" }}
+   {{ if and .crumb.Parent (not .crumb.Parent.IsHome) }}
+      {{ template "breadcrumbs" (dict "host" .host "crumb" .crumb.Parent )  }}
+   {{ end }}
+   {{ if ne .host .crumb }}
+      <li>
+         <a href="{{ .crumb.Permalink }}">{{ .crumb.Title }}</a>
+      </li>
+   {{ end }}
+{{ end }}
+{{ if and .Parent (not .Parent.IsHome) }}
+   <nav role="navigation">
+      <ul>
+         {{ template "breadcrumbs" (dict "host" . "crumb" .) }}
+      </ul>
+   </nav>
+{{ end }}

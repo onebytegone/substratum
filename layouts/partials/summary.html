@@ -1,0 +1,8 @@
+<div>
+   <span>{{ humanize .Section }}</span>
+   <h3>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+   </h3>
+   <p>{{ .Summary  }}</p>
+   <a href="{{ .Permalink }}">{{ i18n "readMoreLnk" }}</a>
+</div>

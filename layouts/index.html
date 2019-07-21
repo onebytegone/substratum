@@ -2,4 +2,20 @@
    <article>
       {{- .Content -}}
    </article>
+   <section>
+      <h2>{{ i18n "whatsNewHdg" }}</h2>
+      {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+      {{ range first 3 $pages.ByDate.Reverse }}
+         {{ partial "summary.html" . }}
+      {{ end }}
+   </section>
+   <section>
+      <ul>
+         {{ range .Site.Params.mainSections }}
+            {{ with $.Site.GetPage "section" . }}
+               <li><a href="{{ .Permalink }}">{{ i18n "seeAllFromSectionLnk" . }}</a></li>
+            {{ end }}
+         {{ end }}
+      </ul>
+   </section>
 {{ end }}
