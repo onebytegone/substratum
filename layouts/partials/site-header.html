@@ -1,14 +1,12 @@
-<nav role="navigation">
-   <div>
-      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-      {{ if .Site.Menus.main }}
-         <ul>
-            {{ range .Site.Menus.main }}
-               <li>
-                  <a href="{{ .URL }}">{{ .Name }}</a>
-               </li>
-            {{ end }}
-         </ul>
-      {{ end }}
-   </div>
+<nav role="navigation" class="flex justify-between items-center w-100 ph3 pv3 pv4-ns ph4-m ph5-l f4 bb b--light-silver">
+   <a class="link black b underline-hover" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+   {{ if .Site.Menus.main }}
+      <ul class="list mv0">
+         {{ range .Site.Menus.main }}
+            <li class="di">
+               <a class="link gray underline-hover" href="{{ .URL }}">{{ .Name }}</a>
+            </li>
+         {{ end }}
+      </ul>
+   {{ end }}
 </nav>
