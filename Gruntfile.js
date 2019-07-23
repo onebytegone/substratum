@@ -130,7 +130,7 @@ module.exports = (grunt) => {
             tasks: [ 'build-umd' ],
          },
          scss: {
-            files: [ config.ts.scss ],
+            files: [ config.scss.src ],
             tasks: [ 'sass:build' ],
          },
          webpackConfig: {
