@@ -2,7 +2,7 @@
 <html lang="{{ $.Site.LanguageCode | default "en" }}">
    {{- partial "head.html" . -}}
    <body class="sans-serif flex flex-column items-center">
-      <a href="#content">{{ i18n "skipToContentLnk" }}</a>
+      <a class="skipToContent noPrint" href="#content">{{ i18n "skipToContentLnk" }}</a>
       {{- partial "site-header.html" . -}}
       {{- partial "page-breadcrumbs.html" . -}}
       <main id="content" class="ph3 ph4-m mw7">

@@ -1,0 +1,18 @@
+// Accessibility (a11y) related component styling
+
+a.skipToContent {
+   position: fixed;
+   left: 1em;
+   top: -999px;
+   width: auto;
+   z-index: 1000;
+   padding: 0.75em 1em;
+   text-decoration: none;
+   font-weight: bold;
+   color: #ffffff;
+   background-color: #000000;
+   &:focus, &:active {
+      position: fixed;
+      top: 0;
+   }
+}

@@ -1,1 +1,7 @@
 // Global styles
+
+@media print {
+   .noPrint {
+      display: none;
+   }
+}
