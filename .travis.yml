@@ -31,11 +31,11 @@ script:
 
 deploy:
    provider: pages
-   local-dir: /tmp/hugoBasicExample/public
-   skip-cleanup: true
-   github-token: $GITHUB_TOKEN # Set in the settings page of the repository, as a secure variable
-   committer-from-gh: true
-   keep-history: true
+   local_dir: /tmp/hugoBasicExample/public
+   skip_cleanup: true
+   github_token: $GITHUB_TOKEN # Set in the settings page of the repository, as a secure variable
+   committer_from_gh: true
+   keep_history: true
    on:
       branch: master
       node: '8.10'
