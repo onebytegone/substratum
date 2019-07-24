@@ -27,7 +27,7 @@ script:
    - pushd /tmp/hugoBasicExample
    - mkdir themes
    - ln -s $TRAVIS_BUILD_DIR themes/substratum
-   - /tmp/hugo -t substratum
+   - /tmp/hugo -t substratum -b 'https://onebytegone.github.io/substratum/'
    - popd
 
 deploy:
