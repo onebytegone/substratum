@@ -24,10 +24,11 @@ script:
    - commitlint-travis
    - grunt clean build
    - npm run test:ci
-   - cd /tmp/hugoBasicExample
+   - pushd /tmp/hugoBasicExample
    - mkdir themes
    - ln -s $TRAVIS_BUILD_DIR themes/substratum
    - /tmp/hugo -t substratum
+   - popd
 
 deploy:
    provider: pages
