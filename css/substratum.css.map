@@ -1,0 +1,16 @@
+{
+	"version": 3,
+	"file": "substratum.css",
+	"sources": [
+		"../../src/scss/substratum.scss",
+		"../../src/scss/partials/_global.scss",
+		"../../src/scss/partials/_a11y-components.scss"
+	],
+	"sourcesContent": [
+		"@import \"partials/global\";\n@import \"partials/a11y-components\";\n",
+		"// Global styles\n\n@media print {\n   .noPrint {\n      display: none;\n   }\n}\n",
+		"// Accessibility (a11y) related component styling\n\na.skipToContent {\n   position: fixed;\n   left: 1em;\n   top: -999px;\n   width: auto;\n   z-index: 1000;\n   padding: 0.75em 1em;\n   text-decoration: none;\n   font-weight: bold;\n   color: #ffffff;\n   background-color: #000000;\n   &:focus, &:active {\n      position: fixed;\n      top: 0;\n   }\n}\n"
+	],
+	"names": [],
+	"mappings": "ACEA,MAAM,CAAC,KAAK;;GACT,AAAA,QAAQ,CAAC;MACN,OAAO,EAAE,IAAI;IACf;;;;ACHJ,AAAA,CAAC,AAAA,cAAc,CAAC;GACb,QAAQ,EAAE,KAAK;GACf,IAAI,EAAE,GAAG;GACT,GAAG,EAAE,MAAM;GACX,KAAK,EAAE,IAAI;GACX,OAAO,EAAE,IAAI;GACb,OAAO,EAAE,UAAU;GACnB,eAAe,EAAE,IAAI;GACrB,WAAW,EAAE,IAAI;GACjB,KAAK,EAAE,OAAO;GACd,gBAAgB,EAAE,OAAO;CAK3B;;;AAfD,AAWG,CAXF,AAAA,cAAc,AAWX,MAAM,EAXV,CAAC,AAAA,cAAc,AAWF,OAAO,CAAC;GACf,QAAQ,EAAE,KAAK;GACf,GAAG,EAAE,CAAC;CACR"
+}

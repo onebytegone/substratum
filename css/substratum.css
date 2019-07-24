@@ -1,0 +1,28 @@
+@media print {
+   /* line 4, src/scss/partials/_global.scss */
+   .noPrint {
+      display: none;
+   }
+}
+
+/* line 3, src/scss/partials/_a11y-components.scss */
+a.skipToContent {
+   position: fixed;
+   left: 1em;
+   top: -999px;
+   width: auto;
+   z-index: 1000;
+   padding: 0.75em 1em;
+   text-decoration: none;
+   font-weight: bold;
+   color: #ffffff;
+   background-color: #000000;
+}
+
+/* line 14, src/scss/partials/_a11y-components.scss */
+a.skipToContent:focus, a.skipToContent:active {
+   position: fixed;
+   top: 0;
+}
+
+/*# sourceMappingURL=substratum.css.map */

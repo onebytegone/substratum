@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+   <meta charset="utf-8" />
+   <title>Hugo Themes</title>
+   <link rel="stylesheet" href="/css/substratum.css">
+   <link rel="stylesheet" href="/css/tachyons.min.css">
+</head>
+<body class="sans-serif flex flex-column items-center">
+      <a class="skipToContent noPrint" href="#content">Skip to content</a><nav role="navigation" class="flex justify-between items-center w-100 ph3 pv3 pv4-ns ph4-m ph5-l f4 bb b--light-silver">
+   <a class="link black b underline-hover" href="https://gohugo.io/">Hugo Themes</a>
+   
+      <ul class="list mv0">
+         
+            <li class="di">
+               <a class="link dark-gray underline-hover" href="/about/">About</a>
+            </li>
+         
+      </ul>
+   
+</nav>
+
+
+   
+      <nav role="navigation">
+         <ul>
+            
+   
+      
+   
+   
+      <li>
+         <a href="https://gohugo.io/post/">Posts</a>
+      </li>
+   
+
+   
+   
+
+         </ul>
+      </nav>
+   
+
+<main id="content" class="ph3 ph4-m mw7">
+   <article>
+      <h1>Math Typesetting</h1><p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.</p>
+
+<p>In this example we will be using <a href="https://katex.org/">KaTeX</a></p>
+
+<ul>
+<li>Create a partial under <code>/layouts/partials/math.html</code></li>
+<li>Within this partial reference the <a href="https://katex.org/docs/autorender.html">Auto-render Extension</a> or host these scripts locally.</li>
+<li>Include the partial in your templates like so:<br></li>
+</ul>
+
+<pre><code>{{ if or .Params.math .Site.Params.math }}
+{{ partial &quot;math.html&quot; . }}
+{{ end }}
+</code></pre>
+
+<ul>
+<li>To enable KaTex globally set the parameter <code>math</code> to <code>true</code> in a project's configuration</li>
+<li>To enable KaTex on a per page basis include the parameter <code>math: true</code> in content files.</li>
+</ul>
+
+<p><strong>Note:</strong> Use the online reference of <a href="https://katex.org/docs/supported.html">Supported TeX Functions</a>
+
+
+<!-- KaTeX -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+</p>
+
+<h3 id="examples">Examples</h3>
+
+<p>Inline math: <span  class="math">\( \varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… \)</span></p>
+
+<p>Block math:</p>
+
+<p><span  class="math">\[
+ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } 
+\]</span></p></article>
+
+      </main><footer class="tc w-100 mt4 ph2 pv2 ph5-l bt b--light-silver">
+   <small>&copy; 2019 <a href="https://gohugo.io/">Hugo Themes</a></small>
+</footer>
+<script type="text/javascript" src="/js/substratum.js"></script>
+   </body>
+</html>
