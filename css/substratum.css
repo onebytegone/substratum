@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @media print {
    /* line 4, src/scss/partials/_global.scss */
    .noPrint {
@@ -23,6 +24,80 @@ a.skipToContent {
 a.skipToContent:focus, a.skipToContent:active {
    position: fixed;
    top: 0;
+}
+
+/* line 3, src/scss/partials/_breadcrumbs.scss */
+.breadcrumbs {
+   width: 100%;
+}
+
+/* line 5, src/scss/partials/_breadcrumbs.scss */
+.breadcrumbs ul {
+   list-style-type: none;
+   margin: 1em 0;
+   padding: 0;
+   display: flex;
+}
+
+/* line 11, src/scss/partials/_breadcrumbs.scss */
+.breadcrumbs li:not(:last-child):after {
+   content: '»';
+   margin: 0 0.4em;
+   color: #777777;
+}
+
+/* line 16, src/scss/partials/_breadcrumbs.scss */
+.breadcrumbs a {
+   color: #777777;
+   font-weight: bold;
+   text-decoration: none;
+}
+
+/* line 20, src/scss/partials/_breadcrumbs.scss */
+.breadcrumbs a:hover {
+   text-decoration: underline;
+}
+
+/* line 3, src/scss/partials/_pagination.scss */
+.pagination {
+   width: 100%;
+   list-style-type: none;
+   margin: 2em 0 1em;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+}
+
+/* line 10, src/scss/partials/_pagination.scss */
+.pagination .page-item {
+   padding: 0.4em 1em;
+}
+
+/* line 12, src/scss/partials/_pagination.scss */
+.pagination .page-item a {
+   color: #000000;
+   font-weight: bold;
+   text-decoration: none;
+}
+
+/* line 16, src/scss/partials/_pagination.scss */
+.pagination .page-item a:hover {
+   text-decoration: underline;
+}
+
+/* line 20, src/scss/partials/_pagination.scss */
+.pagination .page-item.disabled a {
+   color: #cccccc;
+}
+
+/* line 23, src/scss/partials/_pagination.scss */
+.pagination .page-item.active {
+   background-color: #f0f0f0;
+}
+
+/* line 25, src/scss/partials/_pagination.scss */
+.pagination .page-item.active a {
+   color: #777777;
 }
 
 /*# sourceMappingURL=substratum.css.map */
