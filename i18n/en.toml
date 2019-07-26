@@ -7,5 +7,8 @@ other = "Read more"
 [seeAllFromSectionLnk]
 other = "See all: {{ .Title }}"
 
+[homeBreadcrumbLnk]
+other = "Home"
+
 [skipToContentLnk]
 other = "Skip to content"
