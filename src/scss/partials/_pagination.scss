@@ -1,0 +1,30 @@
+// Pagination styling
+
+.pagination {
+   width: 100%;
+   list-style-type: none;
+   margin: 2em 0 1em;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   .page-item {
+      padding: 0.4em 1em;
+      a {
+         color: #000000;
+         font-weight: bold;
+         text-decoration: none;
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+      &.disabled a {
+         color: #cccccc;
+      }
+      &.active {
+         background-color: #f0f0f0;
+         a {
+            color: #777777;
+         }
+      }
+   }
+}
