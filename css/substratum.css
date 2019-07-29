@@ -6,6 +6,12 @@
    }
 }
 
+/* line 9, src/scss/partials/_global.scss */
+article pre {
+   overflow: auto;
+   padding: 1em;
+}
+
 /* line 3, src/scss/partials/_a11y-components.scss */
 a.skipToContent {
    position: fixed;
