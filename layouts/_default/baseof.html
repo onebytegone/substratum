@@ -4,9 +4,11 @@
    <body class="sans-serif flex flex-column items-center">
       <a class="skipToContent noPrint" href="#content">{{ i18n "skipToContentLnk" }}</a>
       {{- partial "site-header.html" . -}}
-      <main id="content" class="ph3 ph4-m mw7">
-         {{- partial "page-breadcrumbs.html" . -}}
-         {{- block "main" . }}{{- end }}
+      <main id="content" class="mw-100">
+         <div class="mw7 ph3 ph4-m ">
+            {{- partial "page-breadcrumbs.html" . -}}
+            {{- block "main" . }}{{- end }}
+         </div>
       </main>
       {{- partial "footer.html" . -}}
       <script type="text/javascript" src="{{ .Site.BaseURL }}/js/substratum.js"></script>
