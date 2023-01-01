@@ -53,12 +53,12 @@
       "source-map-support": "0.5.9",
       "standard-version": "5.0.2",
       "tachyons": "4.10.0",
-      "ts-loader": "5.3.0",
+      "ts-loader": "9.4.2",
       "ts-node": "7.0.1",
       "tslib": "1.9.3",
       "typescript": "3.2.2",
-      "webpack": "4.28.3",
-      "webpack-cli": "3.2.0"
+      "webpack": "5.75.0",
+      "webpack-cli": "5.0.1"
    },
    "dependencies": {},
    "config": {
