@@ -58,7 +58,7 @@
       "tslib": "1.9.3",
       "typescript": "3.2.2",
       "webpack": "4.28.3",
-      "webpack-cli": "3.2.0"
+      "webpack-cli": "3.3.12"
    },
    "dependencies": {},
    "config": {
